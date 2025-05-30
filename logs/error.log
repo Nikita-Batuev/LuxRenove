@@ -1,0 +1,27 @@
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":54}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":51}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":51}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}
+{"type":2,"message":"session_name(): Session name cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":51}
+{"type":2,"message":"session_set_cookie_params(): Session cookie parameters cannot be changed when a session is active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":52}
+{"type":8,"message":"session_start(): Ignoring session_start() because a session is already active","file":"C:\\xampp\\htdocs\\Repair\\config\\config.php","line":53}

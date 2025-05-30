@@ -10,30 +10,36 @@ function initBannerSlider() {
         autoplayTimer: null,
         isAnimating: false,
         slides: document.querySelectorAll('.banner__slide'),
-        navItems: document.querySelectorAll('.banner__nav-item'),
+        dots: document.querySelectorAll('.banner__dot'),
+        prevButton: document.querySelector('.banner__arrow--prev'),
+        nextButton: document.querySelector('.banner__arrow--next'),
         progressBar: document.querySelector('.banner__progress-bar'),
         banner: document.querySelector('.banner'),
 
         init() {
-            if (!this.slides.length || !this.navItems.length || !this.progressBar || !this.banner) {
+            if (!this.slides.length || !this.dots.length || !this.progressBar || !this.banner) {
                 console.warn('Не найдены необходимые элементы слайдера');
                 return;
             }
 
             // Устанавливаем начальное состояние
             this.slides[0].classList.add('active');
-            this.navItems[0].classList.add('active');
+            this.dots[0].classList.add('active');
             this.progressBar.style.width = `${(1 / this.totalSlides) * 100}%`;
 
             // Инициализация обработчиков событий
-            this.navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const slideNumber = parseInt(item.dataset.slide);
+            this.dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slideNumber = parseInt(dot.dataset.slide);
                     if (!isNaN(slideNumber)) {
                         this.goToSlide(slideNumber);
                     }
                 });
             });
+
+            // Обработчики для кнопок навигации
+            this.prevButton?.addEventListener('click', () => this.prevSlide());
+            this.nextButton?.addEventListener('click', () => this.nextSlide());
 
             // Управление автопрокруткой
             this.banner.addEventListener('mouseenter', () => this.stopAutoplay());
@@ -61,6 +67,15 @@ function initBannerSlider() {
                     this.prevSlide();
                 }
             });
+
+            // Добавляем управление с клавиатуры
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') {
+                    this.prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    this.nextSlide();
+                }
+            });
         },
 
         goToSlide(number) {
@@ -72,8 +87,8 @@ function initBannerSlider() {
             this.slides[number - 1].classList.add('active');
 
             // Обновление навигации
-            this.navItems.forEach(item => item.classList.remove('active'));
-            this.navItems[number - 1].classList.add('active');
+            this.dots.forEach(dot => dot.classList.remove('active'));
+            this.dots[number - 1].classList.add('active');
 
             // Обновление прогресс-бара
             this.progressBar.style.width = `${(number / this.totalSlides) * 100}%`;
@@ -84,7 +99,7 @@ function initBannerSlider() {
             // Сброс таймера анимации
             setTimeout(() => {
                 this.isAnimating = false;
-            }, 800);
+            }, 1000);
         },
 
         prevSlide() {

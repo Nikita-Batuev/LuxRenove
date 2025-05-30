@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -30,129 +31,202 @@
             <div class="banner__slide banner__slide--main active">
                 <div class="container">
                     <div class="banner__content">
+                        <div class="banner__badge">Премиум ремонт</div>
                         <h1 class="banner__title">LuxRenove</h1>
                         <p class="banner__subtitle">Создаем пространства, в которых хочется жить</p>
+                        <div class="banner__stats">
+                            <div class="banner__stat">
+                                <span class="banner__stat-number">500+</span>
+                                <span class="banner__stat-text">Проектов</span>
+                            </div>
+                            <div class="banner__stat">
+                                <span class="banner__stat-number">10</span>
+                                <span class="banner__stat-text">Лет опыта</span>
+                            </div>
+                            <div class="banner__stat">
+                                <span class="banner__stat-number">100%</span>
+                                <span class="banner__stat-text">Гарантия</span>
+                            </div>
+                        </div>
                         <div class="banner__buttons">
-                            <a href="#request" class="banner__button">
+                            <a href="request.php" class="banner__button">
                                 <span>Начать проект</span>
                                 <i class='bx bx-right-arrow-alt'></i>
+                            </a>
+                            <a href="#portfolio" class="banner__button banner__button--outline">
+                                <span>Наши работы</span>
+                                <i class='bx bx-images'></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Слайд 2: Лучшие работы -->
-            <div class="banner__slide banner__slide--works">
-                <div class="container">
-                    <div class="banner__works">
-                        <h2 class="banner__section-title">Лучшие проекты</h2>
-                        <div class="banner__works-grid">
-                            <div class="banner__work-card">
-                                <div class="banner__work-image">
-                                    <img src="assets/images/works/work-1.jpg" alt="Проект 1">
-                                </div>
-                                <div class="banner__work-info">
-                                    <h3>Современная квартира</h3>
-                                    <p>120 м² • 3 месяца</p>
-                                    <div class="banner__work-line"></div>
-                                </div>
-                            </div>
-                            <div class="banner__work-card">
-                                <div class="banner__work-image">
-                                    <img src="assets/images/works/work-2.jpg" alt="Проект 2">
-                                </div>
-                                <div class="banner__work-info">
-                                    <h3>Минималистичный лофт</h3>
-                                    <p>85 м² • 2 месяца</p>
-                                    <div class="banner__work-line"></div>
-                                </div>
-                            </div>
-                            <div class="banner__work-card">
-                                <div class="banner__work-image">
-                                    <img src="assets/images/works/work-3.jpg" alt="Проект 3">
-                                </div>
-                                <div class="banner__work-info">
-                                    <h3>Классический интерьер</h3>
-                                    <p>150 м² • 4 месяца</p>
-                                    <div class="banner__work-line"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Слайд 3: Команда -->
-            <div class="banner__slide banner__slide--team">
-                <div class="container">
-                    <div class="banner__team">
-                        <h2 class="banner__section-title">Наша команда</h2>
-                        <div class="banner__team-grid">
-                            <div class="banner__team-card">
-                                <div class="banner__team-image">
-                                    <img src="assets/images/team/member-1.jpg" alt="Александр">
-                                </div>
-                                <div class="banner__team-info">
-                                    <h3>Александр</h3>
-                                    <p>Главный архитектор</p>
-                                    <span>10 лет опыта</span>
-                                </div>
-                            </div>
-                            <div class="banner__team-card">
-                                <div class="banner__team-image">
-                                    <img src="assets/images/team/member-2.jpg" alt="Елена">
-                                </div>
-                                <div class="banner__team-info">
-                                    <h3>Елена</h3>
-                                    <p>Дизайнер интерьера</p>
-                                    <span>8 лет опыта</span>
-                                </div>
-                            </div>
-                            <div class="banner__team-card">
-                                <div class="banner__team-image">
-                                    <img src="assets/images/team/member-3.jpg" alt="Михаил">
-                                </div>
-                                <div class="banner__team-info">
-                                    <h3>Михаил</h3>
-                                    <p>Руководитель проектов</p>
-                                    <span>12 лет опыта</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Слайд 4: Акции -->
+            <!-- Слайд 2: Топовые акции -->
             <div class="banner__slide banner__slide--promo">
                 <div class="container">
                     <div class="banner__promo">
-                        <h2 class="banner__section-title">Специальные предложения</h2>
+                        <h2 class="banner__section-title">Топовые акции</h2>
                         <div class="banner__promo-grid">
                             <div class="banner__promo-card">
                                 <div class="banner__promo-content">
+                                    <div class="banner__promo-badge">Хит сезона</div>
+                                    <div class="banner__promo-discount">-40%</div>
+                                    <h3>Ремонт под ключ</h3>
+                                    <ul class="banner__promo-list">
+                                        <li><i class='bx bx-check'></i> Бесплатный дизайн-проект</li>
+                                        <li><i class='bx bx-check'></i> Премиум материалы</li>
+                                        <li><i class='bx bx-check'></i> Гарантия 5 лет</li>
+                                    </ul>
+                                    <div class="banner__promo-price">
+                                        <span class="banner__promo-old">от 5 000 ₽/м²</span>
+                                        <span class="banner__promo-new">от 3 000 ₽/м²</span>
+                                    </div>
+                                    <div class="banner__promo-period">До 31.12.2024</div>
+                                </div>
+                            </div>
+                            <div class="banner__promo-card">
+                                <div class="banner__promo-content">
+                                    <div class="banner__promo-badge">Популярно</div>
                                     <div class="banner__promo-discount">-30%</div>
-                                    <h3>Дизайн-проект</h3>
-                                    <p>При заказе ремонта под ключ</p>
+                                    <h3>Кухня мечты</h3>
+                                    <ul class="banner__promo-list">
+                                        <li><i class='bx bx-check'></i> Дизайн-проект кухни</li>
+                                        <li><i class='bx bx-check'></i> Встроенная техника</li>
+                                        <li><i class='bx bx-check'></i> Монтаж и подключение</li>
+                                    </ul>
+                                    <div class="banner__promo-price">
+                                        <span class="banner__promo-old">от 350 000 ₽</span>
+                                        <span class="banner__promo-new">от 245 000 ₽</span>
+                                    </div>
                                     <div class="banner__promo-period">До 31.12.2024</div>
                                 </div>
                             </div>
                             <div class="banner__promo-card">
                                 <div class="banner__promo-content">
-                                    <div class="banner__promo-discount">-20%</div>
-                                    <h3>Ремонт кухни</h3>
-                                    <p>На все виды работ</p>
-                                    <div class="banner__promo-period">До 31.12.2024</div>
-                                </div>
-                            </div>
-                            <div class="banner__promo-card">
-                                <div class="banner__promo-content">
+                                    <div class="banner__promo-badge">Новинка</div>
                                     <div class="banner__promo-discount">-25%</div>
-                                    <h3>Отделка стен</h3>
-                                    <p>При заказе от 100 м²</p>
+                                    <h3>Умный дом</h3>
+                                    <ul class="banner__promo-list">
+                                        <li><i class='bx bx-check'></i> Управление освещением</li>
+                                        <li><i class='bx bx-check'></i> Климат-контроль</li>
+                                        <li><i class='bx bx-check'></i> Безопасность</li>
+                                    </ul>
+                                    <div class="banner__promo-price">
+                                        <span class="banner__promo-old">от 200 000 ₽</span>
+                                        <span class="banner__promo-new">от 150 000 ₽</span>
+                                    </div>
                                     <div class="banner__promo-period">До 31.12.2024</div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 3: События -->
+            <div class="banner__slide banner__slide--events">
+                <div class="container">
+                    <div class="banner__events">
+                        <h2 class="banner__section-title">Ближайшие события</h2>
+                        <div class="banner__events-grid">
+                            <div class="banner__event-card">
+                                <div class="banner__event-date">
+                                    <span class="banner__event-day">15</span>
+                                    <span class="banner__event-month">Мар</span>
+                                </div>
+                                <div class="banner__event-content">
+                                    <h3>День открытых дверей</h3>
+                                    <p>Посетите наш шоурум и получите бесплатную консультацию</p>
+                                    <div class="banner__event-details">
+                                        <span><i class='bx bx-time'></i> 12:00 - 20:00</span>
+                                        <span><i class='bx bx-map'></i> ул. Примерная, 123</span>
+                                    </div>
+                                    <a href="#" class="banner__event-button">Записаться</a>
+                                </div>
+                            </div>
+                            <div class="banner__event-card">
+                                <div class="banner__event-date">
+                                    <span class="banner__event-day">20</span>
+                                    <span class="banner__event-month">Мар</span>
+                                </div>
+                                <div class="banner__event-content">
+                                    <h3>Мастер-класс по дизайну</h3>
+                                    <p>Узнайте секреты создания идеального интерьера</p>
+                                    <div class="banner__event-details">
+                                        <span><i class='bx bx-time'></i> 15:00 - 18:00</span>
+                                        <span><i class='bx bx-map'></i> ул. Примерная, 123</span>
+                                    </div>
+                                    <a href="#" class="banner__event-button">Записаться</a>
+                                </div>
+                            </div>
+                            <div class="banner__event-card">
+                                <div class="banner__event-date">
+                                    <span class="banner__event-day">25</span>
+                                    <span class="banner__event-month">Мар</span>
+                                </div>
+                                <div class="banner__event-content">
+                                    <h3>Презентация новой коллекции</h3>
+                                    <p>Эксклюзивный показ новых материалов и технологий</p>
+                                    <div class="banner__event-details">
+                                        <span><i class='bx bx-time'></i> 14:00 - 19:00</span>
+                                        <span><i class='bx bx-map'></i> ул. Примерная, 123</span>
+                                    </div>
+                                    <a href="#" class="banner__event-button">Записаться</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Слайд 4: История компании -->
+            <div class="banner__slide banner__slide--history">
+                <div class="container">
+                    <div class="banner__history">
+                        <h2 class="banner__section-title">Наша история</h2>
+                        <div class="banner__history-timeline">
+                            <div class="banner__history-year">2014</div>
+                            <div class="banner__history-content">
+                                <h3>Основание компании</h3>
+                                <p>Создание команды профессионалов и первые проекты</p>
+                            </div>
+                            <div class="banner__history-milestone">
+                                <span>50+</span>
+                                <small>Проектов</small>
+                            </div>
+                        </div>
+                        <div class="banner__history-timeline">
+                            <div class="banner__history-year">2017</div>
+                            <div class="banner__history-content">
+                                <h3>Расширение</h3>
+                                <p>Открытие собственного шоурума и студии дизайна</p>
+                            </div>
+                            <div class="banner__history-milestone">
+                                <span>200+</span>
+                                <small>Проектов</small>
+                            </div>
+                        </div>
+                        <div class="banner__history-timeline">
+                            <div class="banner__history-year">2020</div>
+                            <div class="banner__history-content">
+                                <h3>Инновации</h3>
+                                <p>Внедрение умных технологий и экологичных решений</p>
+                            </div>
+                            <div class="banner__history-milestone">
+                                <span>350+</span>
+                                <small>Проектов</small>
+                            </div>
+                        </div>
+                        <div class="banner__history-timeline">
+                            <div class="banner__history-year">2024</div>
+                            <div class="banner__history-content">
+                                <h3>Лидер рынка</h3>
+                                <p>Становление лидером в сфере премиум-ремонта</p>
+                            </div>
+                            <div class="banner__history-milestone">
+                                <span>500+</span>
+                                <small>Проектов</small>
                             </div>
                         </div>
                     </div>
@@ -160,23 +234,34 @@
             </div>
         </div>
 
-        <!-- Навигация слайдера -->
-        <div class="banner__nav">
-            <div class="banner__nav-item active" data-slide="1">
-                <span class="banner__nav-number">01</span>
-                <span class="banner__nav-text">Главная</span>
+        <!-- Новая навигация слайдера -->
+        <div class="banner__controls">
+            <div class="banner__dots">
+                <button class="banner__dot active" data-slide="1">
+                    <span class="banner__dot-number">01</span>
+                    <span class="banner__dot-title">Главная</span>
+                </button>
+                <button class="banner__dot" data-slide="2">
+                    <span class="banner__dot-number">02</span>
+                    <span class="banner__dot-title">Проекты</span>
+                </button>
+                <button class="banner__dot" data-slide="3">
+                    <span class="banner__dot-number">03</span>
+                    <span class="banner__dot-title">Команда</span>
+                </button>
+                <button class="banner__dot" data-slide="4">
+                    <span class="banner__dot-number">04</span>
+                    <span class="banner__dot-title">Акции</span>
+                </button>
             </div>
-            <div class="banner__nav-item" data-slide="2">
-                <span class="banner__nav-number">02</span>
-                <span class="banner__nav-text">Проекты</span>
-            </div>
-            <div class="banner__nav-item" data-slide="3">
-                <span class="banner__nav-number">03</span>
-                <span class="banner__nav-text">Команда</span>
-            </div>
-            <div class="banner__nav-item" data-slide="4">
-                <span class="banner__nav-number">04</span>
-                <span class="banner__nav-text">Акции</span>
+            
+            <div class="banner__arrows">
+                <button class="banner__arrow banner__arrow--prev">
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+                <button class="banner__arrow banner__arrow--next">
+                    <i class='bx bx-chevron-right'></i>
+                </button>
             </div>
         </div>
 
@@ -628,5 +713,4 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/reviews.js"></script>
 </body>
-
 </html>

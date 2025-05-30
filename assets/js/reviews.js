@@ -19,44 +19,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const slidesToShow = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
     const totalSlides = slides.length;
 
-    // Клонируем слайды для бесконечной прокрутки
-    const firstSlides = Array.from(slides).slice(0, slidesToShow);
-    const lastSlides = Array.from(slides).slice(-slidesToShow);
-    
-    lastSlides.forEach(slide => {
-        const clone = slide.cloneNode(true);
-        track.insertBefore(clone, track.firstChild);
-    });
-    
-    firstSlides.forEach(slide => {
-        const clone = slide.cloneNode(true);
-        track.appendChild(clone);
-    });
-
-    // Обновляем список слайдов после клонирования
-    const allSlides = document.querySelectorAll('.reviews__slide');
-    currentIndex = slidesToShow;
-
     // Создаем точки навигации
     slides.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.classList.add('reviews__dot');
         if (index === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(index + slidesToShow));
+        dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
     });
 
     const dots = document.querySelectorAll('.reviews__dot');
-
-    // Функция для обновления активного слайда
-    function updateActiveSlide() {
-        allSlides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            if (index === currentIndex) {
-                slide.classList.add('active');
-            }
-        });
-    }
 
     // Функция для перехода к определенному слайду
     function goToSlide(index) {
@@ -65,51 +37,26 @@ document.addEventListener('DOMContentLoaded', function() {
         track.style.transform = `translateX(${offset}%)`;
         
         // Обновляем активную точку
-        const dotIndex = (currentIndex - slidesToShow + totalSlides) % totalSlides;
         dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === dotIndex);
+            dot.classList.toggle('active', i === currentIndex);
         });
-
-        updateActiveSlide();
-    }
-
-    // Функция для проверки и корректировки позиции
-    function checkPosition() {
-        if (currentIndex < slidesToShow) {
-            currentIndex = totalSlides + slidesToShow;
-            track.style.transition = 'none';
-            goToSlide(currentIndex);
-            setTimeout(() => {
-                track.style.transition = 'transform 0.5s ease';
-            }, 50);
-        } else if (currentIndex >= totalSlides + slidesToShow) {
-            currentIndex = slidesToShow;
-            track.style.transition = 'none';
-            goToSlide(currentIndex);
-            setTimeout(() => {
-                track.style.transition = 'transform 0.5s ease';
-            }, 50);
-        }
     }
 
     // Обработчики для кнопок навигации
     prevButton.addEventListener('click', () => {
-        currentIndex--;
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         goToSlide(currentIndex);
-        checkPosition();
     });
 
     nextButton.addEventListener('click', () => {
-        currentIndex++;
+        currentIndex = (currentIndex + 1) % totalSlides;
         goToSlide(currentIndex);
-        checkPosition();
     });
 
     // Автоматическое переключение слайдов
     let autoplayInterval = setInterval(() => {
-        currentIndex++;
+        currentIndex = (currentIndex + 1) % totalSlides;
         goToSlide(currentIndex);
-        checkPosition();
     }, 5000);
 
     // Останавливаем автопереключение при наведении
@@ -120,9 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Возобновляем автопереключение при уходе курсора
     slider.addEventListener('mouseleave', () => {
         autoplayInterval = setInterval(() => {
-            currentIndex++;
+            currentIndex = (currentIndex + 1) % totalSlides;
             goToSlide(currentIndex);
-            checkPosition();
         }, 5000);
     });
 
@@ -130,8 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         const newSlidesToShow = window.innerWidth > 992 ? 3 : window.innerWidth > 768 ? 2 : 1;
         if (newSlidesToShow !== slidesToShow) {
-            currentIndex = newSlidesToShow;
-            goToSlide(currentIndex);
+            goToSlide(0);
         }
     });
 

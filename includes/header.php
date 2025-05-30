@@ -67,19 +67,19 @@
 .mobile-menu {
     position: fixed;
     top: 0;
-    right: -400px;
+    left: -400px;
     width: 400px;
     height: auto;
     background-color: var(--color-black);
     padding: 60px 30px 30px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1001;
-    border-radius: 0 0 0 10px;
-    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-menu.active {
-    right: 0;
+    left: 0;
 }
 
 .mobile-menu-overlay {
@@ -120,7 +120,7 @@
 .mobile-menu__nav {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 0;
     margin-bottom: 30px;
 }
 
@@ -128,30 +128,38 @@
     color: var(--color-white);
     text-decoration: none;
     font-size: 18px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     font-weight: 500;
-    padding: 8px 0;
+    padding: 15px 0;
     position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.mobile-menu__link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-light-purple);
-    transition: width 0.3s ease;
+.mobile-menu__link i {
+    font-size: 20px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu__link:hover i {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.mobile-menu__link:last-child {
+    border-bottom: none;
 }
 
 .mobile-menu__link:hover {
     color: var(--color-light-purple);
-    padding-left: 10px;
+    padding-left: 0;
 }
 
-.mobile-menu__link:hover::after {
-    width: 100%;
+.mobile-menu__link::after {
+    display: none;
 }
 
 .mobile-menu__button {
@@ -165,6 +173,8 @@
     font-size: 16px;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    text-align: center;
+    width: 100%;
 }
 
 .mobile-menu__button:hover {
@@ -207,16 +217,16 @@
 </style>
 <header class="header">
         <div class="container header__container">
-            <button class="header__account-btn">
-                <i class='bx bx-user'></i>
+            <button class="header__menu-btn">
+                <i class='bx bx-menu'></i>
             </button>
             
             <a href="/" class="header__logo-link">
                 <img src="assets/images/logo.svg" alt="LuxRenove" class="header__logo">
             </a>
             
-            <button class="header__menu-btn">
-                <i class='bx bx-menu'></i>
+            <button class="header__account-btn">
+                <i class='bx bx-user'></i>
             </button>
         </div>
     </header>
@@ -227,15 +237,15 @@
         </button>
         
         <nav class="mobile-menu__nav">
-            <a href="index.php" class="mobile-menu__link">Главная</a>
-            <a href="#services" class="mobile-menu__link">Услуги</a>
-            <a href="#portfolio" class="mobile-menu__link">Портфолио</a>
-            <a href="#reviews" class="mobile-menu__link">Отзывы</a>
-            <a href="#contacts" class="mobile-menu__link">Контакты</a>
-            <a href="#promo" class="mobile-menu__link">Акции и скидки</a>
+            <a href="index.php" class="mobile-menu__link">Главная <i class='bx bx-chevron-right'></i></a>
+            <a href="#services" class="mobile-menu__link">Услуги <i class='bx bx-chevron-right'></i></a>
+            <a href="#portfolio" class="mobile-menu__link">Портфолио <i class='bx bx-chevron-right'></i></a>
+            <a href="#reviews" class="mobile-menu__link">Отзывы <i class='bx bx-chevron-right'></i></a>
+            <a href="#contacts" class="mobile-menu__link">Контакты <i class='bx bx-chevron-right'></i></a>
+            <a href="#promo" class="mobile-menu__link">Акции и скидки <i class='bx bx-chevron-right'></i></a>
         </nav>
         
-        <a href="#request" class="mobile-menu__button">Заявка на ремонт</a>
+        <a href="request.php" class="mobile-menu__button">Заявка на ремонт</a>
     </div>
 
     <div class="mobile-menu-overlay"></div>
