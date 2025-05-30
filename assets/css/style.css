@@ -1,0 +1,1000 @@
+.banner {
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    margin-top: 80px;
+    overflow: hidden;
+    background-color: var(--color-black);
+}
+
+.banner__video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.banner__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.2);
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(0.6) contrast(1.2);
+}
+
+.banner__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(45, 27, 77, 0.7) 50%,
+        rgba(0, 0, 0, 0.9) 100%);
+    z-index: 1;
+}
+
+.banner__slider {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+.banner__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    display: flex;
+    align-items: center;
+}
+
+.banner__slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Главный слайд */
+.banner__content {
+    text-align: center;
+    color: var(--color-white);
+    max-width: 1000px;
+    margin: 0 auto;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s ease 0.3s;
+}
+
+.banner__slide.active .banner__content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.banner__title {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.banner__subtitle {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Слайд с работами */
+.banner__works {
+    width: 100%;
+    padding: 0 50px;
+}
+
+.banner__section-title {
+    font-size: 48px;
+    color: var(--color-white);
+    margin-bottom: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.banner__slide.active .banner__section-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner__works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease 0.3s;
+}
+
+.banner__slide.active .banner__works-grid {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner__work-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: transform 0.5s ease;
+}
+
+.banner__work-card:hover {
+    transform: translateY(-10px);
+}
+
+.banner__work-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner__work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.banner__work-card:hover .banner__work-image img {
+    transform: scale(1.1);
+}
+
+.banner__work-info {
+    padding: 25px;
+    color: var(--color-white);
+}
+
+.banner__work-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner__work-info p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.banner__work-line {
+    width: 50px;
+    height: 2px;
+    background: var(--color-light-purple);
+    margin-top: 20px;
+    transition: width 0.3s ease;
+}
+
+.banner__work-card:hover .banner__work-line {
+    width: 100px;
+}
+
+/* Слайд с командой */
+.banner__team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease 0.3s;
+}
+
+.banner__slide.active .banner__team-grid {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner__team-card {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+.banner__team-card:hover {
+    transform: translateY(-10px);
+}
+
+.banner__team-image {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-light-purple);
+    transition: transform 0.5s ease;
+}
+
+.banner__team-card:hover .banner__team-image {
+    transform: scale(1.1);
+}
+
+.banner__team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner__team-info {
+    color: var(--color-white);
+}
+
+.banner__team-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner__team-info p {
+    font-size: 16px;
+    color: var(--color-light-purple);
+    margin-bottom: 10px;
+}
+
+.banner__team-info span {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Слайд с акциями */
+.banner__promo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease 0.3s;
+}
+
+.banner__slide.active .banner__promo-grid {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.banner__promo-card {
+    position: relative;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.banner__promo-card:hover {
+    transform: translateY(-10px);
+}
+
+.banner__promo-content {
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+}
+
+.banner__promo-discount {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-light-purple);
+    margin-bottom: 20px;
+}
+
+.banner__promo-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.banner__promo-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+.banner__promo-period {
+    font-size: 14px;
+    color: var(--color-light-purple);
+}
+
+/* Навигация слайдера */
+.banner__nav {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.banner__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.banner__nav-item:hover {
+    opacity: 1;
+}
+
+.banner__nav-item.active {
+    opacity: 1;
+}
+
+.banner__nav-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.banner__nav-text {
+    font-size: 14px;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.banner__nav-item:hover .banner__nav-text,
+.banner__nav-item.active .banner__nav-text {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Прогресс-бар */
+.banner__progress {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 3;
+}
+
+.banner__progress-bar {
+    width: 25%;
+    height: 100%;
+    background: var(--color-light-purple);
+    transition: width 0.3s ease;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1400px) {
+    .banner__title {
+        font-size: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner__works-grid,
+    .banner__team-grid,
+    .banner__promo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner__nav {
+        right: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner__title {
+        font-size: 72px;
+    }
+
+    .banner__nav {
+        right: 20px;
+    }
+
+    .banner__progress {
+        left: 20px;
+        right: 20px;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner__works-grid,
+    .banner__team-grid,
+    .banner__promo-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .banner__title {
+        font-size: 56px;
+    }
+
+    .banner__subtitle {
+        font-size: 20px;
+    }
+
+    .banner__nav {
+        position: fixed;
+        right: 20px;
+        top: auto;
+        bottom: 80px;
+        transform: none;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .banner__nav-text {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner__title {
+        font-size: 42px;
+    }
+
+    .banner__section-title {
+        font-size: 32px;
+    }
+}
+
+/* Секция акций */
+.promo {
+    padding: 100px 0;
+    background-color: var(--color-white);
+}
+
+.promo__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.promo__title {
+    font-family: var(--font-primary);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-dark-purple);
+    margin-bottom: 15px;
+}
+
+.promo__subtitle {
+    font-family: var(--font-secondary);
+    font-size: 18px;
+    color: var(--color-gray);
+    font-weight: 400;
+}
+
+.promo__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.promo__card {
+    background: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.promo__card:hover {
+    transform: translateY(-10px);
+}
+
+.promo__card-content {
+    padding: 30px;
+    position: relative;
+}
+
+.promo__discount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--color-dark-purple);
+    color: var(--color-white);
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.promo__card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-dark-purple);
+    margin-bottom: 15px;
+    padding-right: 80px;
+}
+
+.promo__card-text {
+    font-size: 16px;
+    color: var(--color-gray);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.promo__card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.promo__period {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+.promo__button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-dark-purple);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.promo__button:hover {
+    background-color: var(--color-light-purple);
+    transform: translateY(-2px);
+}
+
+/* Адаптивные стили для секции акций */
+@media (max-width: 992px) {
+    .promo__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .promo {
+        padding: 60px 0;
+    }
+
+    .promo__title {
+        font-size: 28px;
+    }
+
+    .promo__subtitle {
+        font-size: 16px;
+    }
+
+    .promo__grid {
+        gap: 20px;
+    }
+
+    .promo__card-content {
+        padding: 20px;
+    }
+
+    .promo__card-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .promo__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promo__card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Секция о компании */
+.about {
+    position: relative;
+    padding: 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.about__parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.about__parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-black) 100%);
+    opacity: 0.03;
+    transform-origin: center;
+}
+
+.about__parallax-layer:nth-child(2) {
+    background: radial-gradient(circle at 30% 50%, var(--color-light-purple) 0%, transparent 50%);
+    opacity: 0.02;
+}
+
+.about__parallax-layer:nth-child(3) {
+    background: radial-gradient(circle at 70% 50%, var(--color-light-purple) 0%, transparent 50%);
+    opacity: 0.02;
+}
+
+.about__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    padding: 100px 0;
+}
+
+.about__left {
+    position: relative;
+}
+
+.about__sticky {
+    position: sticky;
+    top: 120px;
+}
+
+.about__title-wrapper {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.about__number {
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--color-light-purple);
+    opacity: 0.1;
+    line-height: 1;
+    position: absolute;
+    top: -40px;
+    left: -20px;
+}
+
+.about__title {
+    font-family: var(--font-primary);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-dark-purple);
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.about__text-block {
+    position: relative;
+}
+
+.about__text {
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.about__highlight {
+    position: relative;
+    padding: 40px;
+    background: var(--color-dark-purple);
+    border-radius: 20px;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.about__highlight-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+}
+
+.about__highlight-text {
+    display: block;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.about__highlight-label {
+    font-size: 18px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+.about__right {
+    position: relative;
+}
+
+.about__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.about__gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.about__gallery-item--large {
+    grid-column: 1 / -1;
+    aspect-ratio: 2/1;
+}
+
+.about__gallery-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.about__gallery-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about__gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about__gallery-text {
+    color: var(--color-white);
+    font-size: 24px;
+    font-weight: 500;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.about__gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.about__gallery-item:hover .about__gallery-overlay {
+    opacity: 1;
+}
+
+.about__gallery-item:hover .about__gallery-text {
+    transform: translateY(0);
+}
+
+.about__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.about__feature {
+    position: relative;
+    padding: 30px;
+    background: var(--color-white);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.about__feature:hover {
+    transform: translateY(-5px);
+}
+
+.about__feature-content {
+    position: relative;
+}
+
+.about__feature-line {
+    width: 40px;
+    height: 2px;
+    background: var(--color-light-purple);
+    margin-bottom: 20px;
+    transition: width 0.3s ease;
+}
+
+.about__feature:hover .about__feature-line {
+    width: 60px;
+}
+
+.about__feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-dark-purple);
+    margin-bottom: 10px;
+}
+
+.about__feature-text {
+    font-size: 16px;
+    color: var(--color-gray);
+    line-height: 1.5;
+}
+
+.about__cta {
+    text-align: center;
+}
+
+.about__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+    background: var(--color-dark-purple);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about__button-line {
+    width: 30px;
+    height: 2px;
+    background: var(--color-white);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.about__button-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.about__button:hover {
+    background: var(--color-light-purple);
+    transform: translateY(-2px);
+}
+
+.about__button:hover .about__button-line {
+    transform: translateX(5px);
+}
+
+.about__button:hover .about__button-line::before {
+    transform: translateX(100%);
+}
+
+/* Адаптивные стили для секции о компании */
+@media (max-width: 1200px) {
+    .about__content {
+        gap: 40px;
+    }
+
+    .about__title {
+        font-size: 36px;
+    }
+
+    .about__text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about__content {
+        grid-template-columns: 1fr;
+    }
+
+    .about__sticky {
+        position: relative;
+        top: 0;
+    }
+
+    .about__gallery {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
+    }
+
+    .about__number {
+        font-size: 80px;
+    }
+
+    .about__title {
+        font-size: 32px;
+    }
+
+    .about__text {
+        font-size: 18px;
+    }
+
+    .about__gallery {
+        height: 300px;
+        gap: 20px;
+    }
+
+    .about__features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about__number {
+        font-size: 60px;
+    }
+
+    .about__title {
+        font-size: 28px;
+    }
+
+    .about__gallery {
+        height: 250px;
+    }
+
+    .about__button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Удаляем старые стили отзывов */
+/* Секция отзывов */
+.reviews {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+}

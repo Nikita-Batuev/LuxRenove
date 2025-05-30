@@ -1,0 +1,187 @@
+.repair-request-page {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.repair-request-page__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.repair-request-page__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.repair-request-page__title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.repair-request-page__subtitle {
+    font-size: 18px;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 30px auto 0;
+    line-height: 1.6;
+}
+
+.repair-request-page__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Форма */
+.repair-request-page__form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.repair-request-page__form-group {
+    margin-bottom: 25px;
+}
+
+.repair-request-page__form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.repair-request-page__form-group input,
+.repair-request-page__form-group select,
+.repair-request-page__form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.repair-request-page__form-group input:focus,
+.repair-request-page__form-group select:focus,
+.repair-request-page__form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.repair-request-page__form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.repair-request-page__form-footer {
+    margin-top: 40px;
+}
+
+.repair-request-page__submit {
+    width: 100%;
+    padding: 15px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.repair-request-page__submit:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.repair-request-page__submit:active {
+    transform: translateY(0);
+}
+
+/* Информационные карточки */
+.repair-request-page__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.repair-request-page__info-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.repair-request-page__info-card i {
+    font-size: 40px;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.repair-request-page__info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.repair-request-page__info-card p {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .repair-request-page {
+        padding: 100px 0 60px;
+    }
+
+    .repair-request-page__title {
+        font-size: 36px;
+    }
+
+    .repair-request-page__content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .repair-request-page {
+        padding: 80px 0 40px;
+    }
+
+    .repair-request-page__title {
+        font-size: 32px;
+    }
+
+    .repair-request-page__subtitle {
+        font-size: 16px;
+    }
+
+    .repair-request-page__form {
+        padding: 30px 20px;
+    }
+} 

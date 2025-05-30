@@ -1,0 +1,366 @@
+.promotions-page {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+}
+
+.promotions-page__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.promotions-page__title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.promotions-page__title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+.promotions-page__subtitle {
+    font-size: 18px;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 30px auto 0;
+    line-height: 1.6;
+}
+
+.promotions-page__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Карточка акции */
+.promotions-page__card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promotions-page__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.promotions-page__card-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.promotions-page__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.promotions-page__card:hover .promotions-page__card-image img {
+    transform: scale(1.1);
+}
+
+.promotions-page__card-discount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.promotions-page__card-content {
+    padding: 30px;
+}
+
+.promotions-page__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.promotions-page__card-description {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.promotions-page__card-dates {
+    font-size: 14px;
+    color: #95a5a6;
+    margin-bottom: 20px;
+}
+
+.promotions-page__card-conditions {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.promotions-page__card-conditions h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.promotions-page__card-conditions p {
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.promotions-page__card-button {
+    width: 100%;
+    padding: 15px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.promotions-page__card-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.promotions-page__card-button:active {
+    transform: translateY(0);
+}
+
+/* Модальное окно */
+.promotions-page__modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.promotions-page__modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.promotions-page__modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease;
+}
+
+.promotions-page__modal.show .promotions-page__modal-content {
+    transform: translateY(0);
+}
+
+.promotions-page__modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6c757d;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.promotions-page__modal-close:hover {
+    color: #e74c3c;
+}
+
+.promotions-page__modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+/* Сообщение об отсутствии акций */
+.promotions-page__no-data {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.promotions-page__no-data p {
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Стили для модального окна */
+.promotions-page__modal-image {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.promotions-page__modal-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.promotions-page__modal-discount {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.promotions-page__modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.promotions-page__modal-description {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.promotions-page__modal-dates {
+    font-size: 14px;
+    color: #95a5a6;
+    margin-bottom: 20px;
+}
+
+.promotions-page__modal-conditions {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.promotions-page__modal-conditions h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.promotions-page__modal-conditions p {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.promotions-page__modal-footer {
+    text-align: center;
+}
+
+.promotions-page__modal-button {
+    padding: 15px 30px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.promotions-page__modal-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.promotions-page__modal-button:active {
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .promotions-page {
+        padding: 100px 0 60px;
+    }
+
+    .promotions-page__title {
+        font-size: 36px;
+    }
+
+    .promotions-page__content {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .promotions-page {
+        padding: 80px 0 40px;
+    }
+
+    .promotions-page__title {
+        font-size: 32px;
+    }
+
+    .promotions-page__subtitle {
+        font-size: 16px;
+    }
+
+    .promotions-page__card-content {
+        padding: 20px;
+    }
+
+    .promotions-page__card-title {
+        font-size: 20px;
+    }
+
+    .promotions-page__modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+} 
